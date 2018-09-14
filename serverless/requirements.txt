@@ -1,0 +1,1 @@
+git+https://github.com/bryantbiggs/repro-serverless-requirements.git@master#"egg=sdk&subdirectory=sdk"

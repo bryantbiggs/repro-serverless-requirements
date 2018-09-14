@@ -1,0 +1,31 @@
+service: Repro
+
+frameworkVersion: '>=1.31.0'
+
+custom:
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+  pythonRequirements:
+    dockerizePip: true
+
+provider:
+  name: aws
+  runtime: python3.6
+  stage: ${self:custom.stage}
+  region: ${self:custom.region}
+  versionFunctions: false
+
+plugins:
+  - serverless-python-requirements
+
+package:
+  exclude:
+    - ./**
+  include:
+    - repro.py
+
+functions:
+  repro:
+    handler: repro.handler
+    description: Test if this works
+    memorySize: 128

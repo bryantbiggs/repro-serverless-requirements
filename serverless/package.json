@@ -1,0 +1,11 @@
+{
+  "name": "repro",
+  "version": "0.1.0",
+  "description": " Repro of installing from private git repo in a subdirectory",
+  "dependencies": {
+    "serverless": "^1.31.0"
+  },
+  "devDependencies": {
+    "serverless-python-requirements": "^4.2.0"
+  }
+}
